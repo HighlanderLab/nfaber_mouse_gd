@@ -498,11 +498,11 @@ gd <- function(input) {
       # gene drive resistance
       aut.mG <- pop$aut.m == -999 # gene drive
       aut.mN <- pop$aut.m == 0    # resitant
-      aut.mW <- !aut.mG | !aut.mN # wild type
+      aut.mW <- !aut.mG & !aut.mN # wild type
 
       aut.pG <- pop$aut.p == -999 # gene drive
       aut.pN <- pop$aut.p == 0    # resitant
-      aut.pW <- !aut.pG | !aut.pN # wild type
+      aut.pW <- !aut.pG & !aut.pN # wild type
 
       nIndWW <- sum(aut.mW & aut.pW)
       nIndWG <- sum((aut.mW & aut.pG) | (aut.mG & aut.pW))
